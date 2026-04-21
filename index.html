@@ -11,19 +11,30 @@
 
 <h1>Chợ đồ cũ</h1>
 
+<button onclick="login()">Đăng nhập</button>
+<button onclick="logout()">Đăng xuất</button>
+
+<p id="user"></p>
+
+<hr>
+
 <!-- Trang sảnh -->
+
 <div id="home">
 
-<h2>Chọn mục</h2>
+<h2>Trang chính</h2>
 
 <button onclick="openMarket()">Chợ đồ cũ</button>
+
 <br><br>
+
 <button onclick="openUpload()">Nơi đăng đồ</button>
 
 </div>
 
 
 <!-- Chợ đồ cũ -->
+
 <div id="market" style="display:none">
 
 <h2>Chợ đồ cũ</h2>
@@ -36,6 +47,7 @@
 
 
 <!-- Nơi đăng đồ -->
+
 <div id="upload" style="display:none">
 
 <h2>Nơi đăng đồ</h2>
@@ -45,17 +57,21 @@
 <br><br>
 
 <input type="file" id="image">
-<br>
+
+<br><br>
 
 <input type="text" id="name" placeholder="Tên món đồ">
-<br>
 
-<textarea id="desc" placeholder="Mô tả"></textarea>
-<br>
+<br><br>
+
+<textarea id="desc" placeholder="Mô tả món đồ"></textarea>
+
+<br><br>
 
 <button onclick="upload()">Đăng món đồ</button>
 
 </div>
+
 
 <script src="script.js"></script>
 
