@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Web Đổi Đồ - Nguyên</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Web Đổi Đồ Bạn Bè</h1>
+
+<!-- Đăng nhập -->
+<div id="login">
+
+<h2>Đăng nhập</h2>
+
+<input type="text" id="username" placeholder="Tên của bạn">
+<input type="password" id="password" placeholder="Mã mời">
+
+<button onclick="login()">Vào Web</button>
+
+</div>
+
+
+<!-- Nội dung chính -->
+<div id="main" style="display:none">
+
+<h2>Đăng món đồ</h2>
+
+<input type="file" id="image">
+<br><br>
+
+<input type="text" id="name" placeholder="Tên món đồ">
+<br><br>
+
+<textarea id="desc" placeholder="Mô tả"></textarea>
+<br><br>
+
+<button onclick="upload()">Đăng món đồ</button>
+
+<h2>Danh sách món đồ</h2>
+
+<div id="items"></div>
+
+</div>
+
+
+<script>
+
+let admin = "Nguyen"
+let invite = "12345"
+
+function login(){
+
+let user = document.getElementById("username").value
+let pass = document.getElementById("password").value
+
+if(pass == invite){
+
+document.getElementById("login").style.display = "none"
+document.getElementById("main").style.display = "block"
+
+}else{
+
+alert("Sai mã mời")
+
+}
+
+}
+
+
+function upload(){
+
+let name = document.getElementById("name").value
+let desc = document.getElementById("desc").value
+let image = document.getElementById("image").files[0]
+
+let reader = new FileReader()
+
+reader.onload = function(){
+
+let div = document.createElement("div")
+div.className = "item"
+
+div.innerHTML = `
+
+<img src="${reader.result}">
+<h3>${name}</h3>
+<p>${desc}</p>
+
+<button onclick="trade(this)">Yêu cầu đổi</button>
+
+<button onclick="deleteItem(this)">Xóa</button>
+
+`
+
+document.getElementById("items").appendChild(div)
+
+}
+
+reader.readAsDataURL(image)
+
+}
+
+
+function trade(btn){
+
+let name = prompt("Tên món đồ bạn muốn đổi")
+
+let img = prompt("Link ảnh món đồ")
+
+let div = document.createElement("div")
+
+div.innerHTML = `
+
+<p>Yêu cầu đổi:</p>
+<p>${name}</p>
+
+<button>Chấp nhận</button>
+<button>Không chấp nhận</button>
+<button>Muốn thêm</button>
+
+`
+
+btn.parentElement.appendChild(div)
+
+}
+
+
+function deleteItem(btn){
+
+btn.parentElement.remove()
+
+}
+
+</script>
+
+
+</body>
+
+</html>
