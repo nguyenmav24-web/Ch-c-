@@ -45,3 +45,35 @@ width:220px;
 border-radius:10px;
 margin-bottom:10px;
 }
+body{
+background: linear-gradient(135deg,#74ebd5,#9face6);
+font-family: Arial;
+text-align:center;
+}
+
+h1{
+color:white;
+font-size:40px;
+}
+
+button{
+background:#4CAF50;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#45a049;
+transform:scale(1.05);
+}
+
+.item{
+background:white;
+padding:15px;
+margin:15px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
