@@ -135,3 +135,25 @@ btn.parentElement.remove()
 }
 
 }
+
+function openMarket(){
+
+document.getElementById("home").style.display="none"
+document.getElementById("market").style.display="block"
+
+}
+
+function openUpload(){
+
+document.getElementById("home").style.display="none"
+document.getElementById("upload").style.display="block"
+
+}
+
+function back(){
+
+document.getElementById("home").style.display="block"
+document.getElementById("market").style.display="none"
+document.getElementById("upload").style.display="none"
+
+}
