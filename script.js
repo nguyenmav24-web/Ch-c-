@@ -8,15 +8,10 @@ function login(){
 let user = prompt("Nhập tên")
 let pass = prompt("Nhập mật khẩu")
 
-if(user == admin && pass == adminPass){
-
-currentUser = "Admin"
-
-}else{
-
 currentUser = user
 
-}
+document.getElementById("login").style.display="none"
+document.getElementById("main").style.display="block"
 
 document.getElementById("user").innerHTML =
 "Đang đăng nhập: " + currentUser
@@ -26,11 +21,9 @@ document.getElementById("user").innerHTML =
 
 function logout(){
 
-currentUser = ""
+currentUser=""
 
-document.getElementById("user").innerHTML =
-"Chưa đăng nhập"
-
-alert("Đã đăng xuất")
+document.getElementById("login").style.display="block"
+document.getElementById("main").style.display="none"
 
 }
