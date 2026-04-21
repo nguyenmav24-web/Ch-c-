@@ -11,12 +11,17 @@
 
 <h1>Chợ đồ cũ</h1>
 
-<div id="account">
+<!-- Thanh tài khoản góc phải -->
 
-<button onclick="login()">Đăng nhập</button>
-<button onclick="logout()">Đăng xuất</button>
+<div id="account" style="position:absolute;top:20px;right:20px;">
 
-<p id="user">Chưa đăng nhập</p>
+<button id="loginBtn" onclick="login()">Đăng nhập</button>
+
+<button id="logoutBtn" onclick="logout()" style="display:none">
+Đăng xuất
+</button>
+
+<p id="user"></p>
 
 </div>
 
