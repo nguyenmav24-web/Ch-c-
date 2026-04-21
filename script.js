@@ -1,10 +1,5 @@
 let currentUser = ""
 
-let admin = "admin"
-let adminPass = "admin123"
-
-let currentUser = ""
-
 function login(){
 
 let user = prompt("Nhập tên")
@@ -29,5 +24,85 @@ document.getElementById("loginBtn").style.display="inline"
 document.getElementById("logoutBtn").style.display="none"
 
 document.getElementById("user").innerHTML=""
+
+location.reload()
+
+}
+
+
+function openMarket(){
+
+document.getElementById("home").style.display="none"
+document.getElementById("market").style.display="block"
+document.getElementById("upload").style.display="none"
+
+}
+
+
+function openUpload(){
+
+document.getElementById("home").style.display="none"
+document.getElementById("market").style.display="none"
+document.getElementById("upload").style.display="block"
+
+}
+
+
+function back(){
+
+document.getElementById("home").style.display="block"
+document.getElementById("market").style.display="none"
+document.getElementById("upload").style.display="none"
+
+}
+
+
+function upload(){
+
+let name = document.getElementById("name").value
+let desc = document.getElementById("desc").value
+let image = document.getElementById("image").files[0]
+
+if(!image){
+alert("Chưa chọn ảnh")
+return
+}
+
+let reader = new FileReader()
+
+reader.onload = function(){
+
+let div = document.createElement("div")
+
+div.className="item"
+
+div.innerHTML=`
+
+<p>Người đăng: ${currentUser}</p>
+
+<img src="${reader.result}">
+
+<h3>${name}</h3>
+
+<p>${desc}</p>
+
+<button onclick="deleteItem(this)">Xóa</button>
+
+`
+
+document.getElementById("items").appendChild(div)
+
+alert("Đăng món đồ thành công!")
+
+}
+
+reader.readAsDataURL(image)
+
+}
+
+
+function deleteItem(btn){
+
+btn.parentElement.remove()
 
 }
