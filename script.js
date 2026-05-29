@@ -125,3 +125,56 @@ function dangNhap(){
         document.getElementById("error").innerText = "Sai tài khoản hoặc mật khẩu!";
     }
 }
+let accounts = [
+    {
+        username: "nguyenmav24",
+        password: "akrzen"
+    }
+];
+
+function dangKy(){
+
+    let newUser = prompt("Tạo tên tài khoản:");
+    let newPass = prompt("Tạo mật khẩu:");
+
+    if(!newUser || !newPass){
+        alert("Không được để trống!");
+        return;
+    }
+
+    for(let acc of accounts){
+
+        if(acc.username === newUser){
+
+            alert("Tài khoản đã tồn tại!");
+            return;
+        }
+    }
+
+    accounts.push({
+        username: newUser,
+        password: newPass
+    });
+
+    alert("Đăng ký thành công!");
+}
+
+function dangNhap(){
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    for(let acc of accounts){
+
+        if(acc.username === user && acc.password === pass){
+
+            document.getElementById("login-box").style.display = "none";
+
+            document.getElementById("web-content").style.display = "block";
+
+            return;
+        }
+    }
+
+    document.getElementById("error").innerText = "Sai tài khoản hoặc mật khẩu!";
+}
