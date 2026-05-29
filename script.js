@@ -139,10 +139,56 @@ function saveAccounts(){
     localStorage.setItem("accounts", JSON.stringify(accounts));
 }
 
-function dangKy(){
+       
 
-    let newUser = prompt("Tạo tên tài khoản:");
-    let newPass = prompt("Tạo mật khẩu:");
+function dangNhap(){
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    for(let acc of accounts){
+
+        if(acc.username === user && acc.password === pass){
+
+            document.getElementById("login-box").style.display = "none";
+
+            document.getElementById("web-content").style.display = "block";
+
+            return;
+        }
+    }
+
+    document.getElementById("error").innerText = "Sai tài khoản hoặc mật khẩu!";
+}
+let mode = "";
+
+function showLogin(){
+
+    mode = "login";
+
+    document.getElementById("form-box").style.display = "block";
+
+    document.getElementById("actionBtn").innerText = "Đăng nhập";
+
+    document.getElementById("actionBtn").onclick = dangNhap;
+}
+
+function showRegister(){
+
+    mode = "register";
+
+    document.getElementById("form-box").style.display = "block";
+
+    document.getElementById("actionBtn").innerText = "Đăng ký";
+
+    document.getElementById("actionBtn").onclick = dangKyForm;
+}
+
+function dangKyForm(){
+
+    let newUser = document.getElementById("username").value;
+
+    let newPass = document.getElementById("password").value;
 
     if(!newUser || !newPass){
 
@@ -168,24 +214,4 @@ function dangKy(){
     saveAccounts();
 
     alert("Đăng ký thành công!");
-}
-
-function dangNhap(){
-
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-
-    for(let acc of accounts){
-
-        if(acc.username === user && acc.password === pass){
-
-            document.getElementById("login-box").style.display = "none";
-
-            document.getElementById("web-content").style.display = "block";
-
-            return;
-        }
-    }
-
-    document.getElementById("error").innerText = "Sai tài khoản hoặc mật khẩu!";
 }
