@@ -109,20 +109,7 @@ btn.parentElement.remove()
 
 document.getElementById("web-content").style.display = "none";
 
-function dangNhap(){
 
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-
-    if(user === "admin" && pass === "123456"){
-
-        document.getElementById("login-box").style.display = "none";
-
-        document.getElementById("web-content").style.display = "block";
-
-    } else {
-
-        document.getElementById("error").innerText = "Sai tài khoản hoặc mật khẩu!";
     }
 }
 let accounts = JSON.parse(localStorage.getItem("accounts")) || [
