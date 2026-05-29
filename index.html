@@ -9,16 +9,29 @@
 </div>
 <body>
 <div id="login-box">
-    <h2>Đăng nhập</h2>
-<br><br>
 
-<button onclick="dangKy()">Đăng ký</button>
-    <input type="text" id="username" placeholder="Tên đăng nhập">
-    <input type="password" id="password" placeholder="Mật khẩu">
+    <h2>Welcome</h2>
 
-    <button onclick="dangNhap()">Đăng nhập</button>
+    <button onclick="showLogin()">Đăng nhập</button>
 
-    <p id="error"></p>
+    <br><br>
+
+    <button onclick="showRegister()">Đăng ký</button>
+
+    <div id="form-box" style="display:none; margin-top:20px;">
+
+        <input type="text" id="username" placeholder="Tên tài khoản">
+
+        <input type="password" id="password" placeholder="Mật khẩu">
+
+        <br><br>
+
+        <button id="actionBtn"></button>
+
+        <p id="error"></p>
+
+    </div>
+
 </div>
 
 <div id="web-content" style="display:none;">
