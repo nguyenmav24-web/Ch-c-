@@ -126,13 +126,6 @@ function saveAccounts(){
     localStorage.setItem("accounts", JSON.stringify(accounts));
 }
 
-       
-
-function dangNhap(){
-
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-
     for(let acc of accounts){
 
         if(acc.username === user && acc.password === pass){
@@ -214,3 +207,9 @@ function dangKyForm(){
 
     alert("Đăng ký thành công!");
 }
+```javascript
+function logout(){
+
+    location.reload();
+}
+```
