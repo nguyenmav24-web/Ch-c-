@@ -148,27 +148,39 @@ function dangNhap(){
     document.getElementById("error").innerText = "Sai tài khoản hoặc mật khẩu!";
 }
 let mode = "";
-
+```javascript id="0ld5h7"
 function showLogin(){
-
-    mode = "login";
 
     document.getElementById("form-box").style.display = "block";
 
     document.getElementById("actionBtn").innerText = "Đăng nhập";
 
     document.getElementById("actionBtn").onclick = dangNhap;
+
+    document.getElementById("loginSelect").style.display = "none";
+
+    document.getElementById("registerSelect").style.display = "none";
+}
+```
+
+
 }
 
+```javascript id="yb8mwy"
 function showRegister(){
-
-    mode = "register";
 
     document.getElementById("form-box").style.display = "block";
 
     document.getElementById("actionBtn").innerText = "Đăng ký";
 
     document.getElementById("actionBtn").onclick = dangKyForm;
+
+    document.getElementById("loginSelect").style.display = "none";
+
+    document.getElementById("registerSelect").style.display = "none";
+}
+```
+
 }
 
 function dangKyForm(){
