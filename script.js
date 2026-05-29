@@ -125,12 +125,19 @@ function dangNhap(){
         document.getElementById("error").innerText = "Sai tài khoản hoặc mật khẩu!";
     }
 }
-let accounts = [
+let accounts = JSON.parse(localStorage.getItem("accounts")) || [
+
     {
         username: "nguyenmav24",
         password: "akrzen"
     }
+
 ];
+
+function saveAccounts(){
+
+    localStorage.setItem("accounts", JSON.stringify(accounts));
+}
 
 function dangKy(){
 
@@ -138,6 +145,7 @@ function dangKy(){
     let newPass = prompt("Tạo mật khẩu:");
 
     if(!newUser || !newPass){
+
         alert("Không được để trống!");
         return;
     }
@@ -152,9 +160,12 @@ function dangKy(){
     }
 
     accounts.push({
+
         username: newUser,
         password: newPass
     });
+
+    saveAccounts();
 
     alert("Đăng ký thành công!");
 }
