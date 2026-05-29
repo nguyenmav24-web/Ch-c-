@@ -1,129 +1,180 @@
+```html
 <!DOCTYPE html>
-<html>
-<div id="home">
+<html lang="vi">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Chợ đồ cũ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NguyenMav24</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
-</div>
+
 <body>
+
+<div id="particles"></div>
+
+<div id="loading">
+
+<h1>NguyenMav24</h1>
+
+<p>Loading...</p>
+
+</div>
+
 <div id="login-box">
 
-    <h2>Welcome</h2>
+<h1>NguyenMav24</h1>
 
-    <button onclick="showLogin()">Đăng nhập</button>
+<button id="loginSelect"
+onclick="showLogin()">
 
-    <br><br>
+Đăng nhập
 
-    <button onclick="showRegister()">Đăng ký</button>
-
-    <div id="form-box" style="display:none; margin-top:20px;">
-
-        <input type="text" id="username" placeholder="Tên tài khoản">
-
-        <input type="password" id="password" placeholder="Mật khẩu">
-
-        <br><br>
-
-        <button id="actionBtn"></button>
-
-        <p id="error"></p>
-
-    </div>
-
-</div>
-
-<div id="web-content" style="display:none;">
-    ```html
-<div class="topbar">
-
-    <h1>NguyenMav24</h1>
-
-    <button onclick="logout()">Đăng xuất</button>
-
-</div>
-
-<div class="card">
-
-    <h2>Welcome 👋</h2>
-
-    <p>Đây là web của Nguyên</p>
-
-</div>
-
-<div class="card">
-
-    <h2>Thông tin</h2>
-
-    <p>Web marketplace / profile</p>
-
-</div>
-```
-
-<h1>Chợ đồ cũ</h1>
-
-<!-- Thanh tài khoản góc phải -->
-
-<div id="account" style="position:absolute;top:20px;right:20px;">
-
-<button id="loginBtn" onclick="login()">Đăng nhập</button>
-
-<button id="logoutBtn" onclick="logout()" style="display:none">
-Đăng xuất
 </button>
-
-<p id="user"></p>
-
-</div>
-
-<hr>
-
-<div id="home">
-
-<h2>Trang chính</h2>
-
-<button onclick="openMarket()">Chợ đồ cũ</button>
 
 <br><br>
 
-<button onclick="openUpload()">Nơi đăng đồ</button>
+<button id="registerSelect"
+onclick="showRegister()">
+
+Đăng ký
+
+</button>
+
+<div id="form-box">
+
+<input type="text"
+id="username"
+placeholder="Tên tài khoản">
+
+<input type="password"
+id="password"
+placeholder="Mật khẩu">
+
+<br><br>
+
+<button id="actionBtn"></button>
+
+<p id="error"></p>
 
 </div>
 
+</div>
 
-<div id="market" style="display:none">
+<div id="web-content">
 
-<h2>Chợ đồ cũ</h2>
+<div class="topbar">
 
-<button onclick="back()">← Quay lại</button>
+<h2>NguyenMav24</h2>
+
+<div>
+
+<button onclick="openHome()">
+Home
+</button>
+
+<button onclick="openMarket()">
+Market
+</button>
+
+<button onclick="openUpload()">
+Upload
+</button>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+<div id="home">
+
+<div class="hero">
+
+<h1>Welcome 👋</h1>
+
+<p>
+Website dark mode hiện đại
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>Profile</h2>
+
+<p id="profileName">
+Người dùng
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Status</h2>
+
+<p>Online</p>
+
+</div>
+
+<div class="card">
+
+<h2>Design</h2>
+
+<p>Modern UI</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="market">
+
+<h1>Marketplace</h1>
 
 <div id="items"></div>
 
 </div>
-<div id="upload" style="display:none">
-<h2>Nơi đăng đồ</h2>
 
-<button onclick="back()">← Quay lại</button>
+<div id="upload">
+
+<div class="card">
+
+<h2>Đăng sản phẩm</h2>
+
+<input type="text"
+id="name"
+placeholder="Tên sản phẩm">
+
+<textarea id="desc"
+placeholder="Mô tả"></textarea>
+
+<input type="file"
+id="image">
 
 <br><br>
 
-<input type="file" id="image">
-
-<br><br>
-
-<input type="text" id="name" placeholder="Tên món đồ">
-
-<br><br>
-
-<textarea id="desc" placeholder="Mô tả"></textarea>
-
-<br><br>
-
-<button onclick="upload()">Đăng món đồ</button>
+<button onclick="upload()">
+Đăng
+</button>
 
 </div>
 
-</html>
+</div>
+
+</div>
 
 <script src="script.js"></script>
+
+</body>
+</html>
+```
