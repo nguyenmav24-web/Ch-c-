@@ -77,3 +77,34 @@ margin:15px;
 border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
+#login-box{
+    width:300px;
+    margin:120px auto;
+    padding:30px;
+    background:#111;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 20px hotpink;
+    color:white;
+}
+
+#login-box input{
+    width:90%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+}
+
+#login-box button{
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    background:hotpink;
+    color:white;
+    cursor:pointer;
+}
+
+#error{
+    color:red;
+}
