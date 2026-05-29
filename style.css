@@ -1,13 +1,4 @@
-body{
-font-family: Arial;
-background:white;
-padding:20px;
-text-align:center;
-}
 
-h1{
-color:#2196F3;
-}
 
 input, textarea{
 width:250px;
@@ -108,3 +99,46 @@ box-shadow:0 5px 15px rgba(0,0,0,0.2);
 #error{
     color:red;
 }
+```css
+body{
+    background:#0d0d0d;
+    color:white;
+    font-family:Arial;
+    margin:0;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#111;
+    border-bottom:1px solid #222;
+}
+
+.topbar h1{
+    color:white;
+}
+
+.topbar button{
+    background:#ff2e63;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    color:white;
+    cursor:pointer;
+}
+
+.card{
+    background:#161616;
+    margin:20px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,255,255,0.05);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+```
