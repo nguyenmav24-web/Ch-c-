@@ -1,19 +1,7 @@
 ```javascript
-setTimeout(function(){
-
-document.getElementById("loading")
-.style.display="none"
-
-document.getElementById("login-box")
-.style.display="block"
-
-},2000)
-
-let currentUser=""
-
-let accounts =
-JSON.parse(localStorage.getItem("accounts"))
-|| [
+let accounts = JSON.parse(
+localStorage.getItem("accounts")
+) || [
 
 {
 username:"nguyenmav24",
@@ -42,12 +30,6 @@ document.getElementById("actionBtn")
 document.getElementById("actionBtn")
 .onclick=dangNhap
 
-document.getElementById("loginSelect")
-.style.display="none"
-
-document.getElementById("registerSelect")
-.style.display="none"
-
 }
 
 function showRegister(){
@@ -60,12 +42,6 @@ document.getElementById("actionBtn")
 
 document.getElementById("actionBtn")
 .onclick=dangKy
-
-document.getElementById("loginSelect")
-.style.display="none"
-
-document.getElementById("registerSelect")
-.style.display="none"
 
 }
 
@@ -130,13 +106,10 @@ document.getElementById("password")
 
 for(let acc of accounts){
 
-if(acc.username===user &&
-acc.password===pass){
-
-currentUser=user
-
-document.getElementById("profileName")
-.innerHTML=user
+if(
+acc.username===user &&
+acc.password===pass
+){
 
 document.getElementById("login-box")
 .style.display="none"
@@ -151,7 +124,8 @@ return
 }
 
 document.getElementById("error")
-.innerHTML="Sai tài khoản hoặc mật khẩu"
+.innerHTML=
+"Sai tài khoản hoặc mật khẩu"
 
 }
 
@@ -160,102 +134,5 @@ function logout(){
 location.reload()
 
 }
-
-function openHome(){
-
-document.getElementById("home")
-.style.display="block"
-
-document.getElementById("market")
-.style.display="none"
-
-document.getElementById("upload")
-.style.display="none"
-
-}
-
-function openMarket(){
-
-document.getElementById("home")
-.style.display="none"
-
-document.getElementById("market")
-.style.display="block"
-
-document.getElementById("upload")
-.style.display="none"
-
-}
-
-function openUpload(){
-
-document.getElementById("home")
-.style.display="none"
-
-document.getElementById("market")
-.style.display="none"
-
-document.getElementById("upload")
-.style.display="block"
-
-}
-
-function upload(){
-
-let name =
-document.getElementById("name").value
-
-let desc =
-document.getElementById("desc").value
-
-let image =
-document.getElementById("image").files[0]
-
-if(!image){
-
-alert("Chưa chọn ảnh")
-return
-
-}
-
-let reader = new FileReader()
-
-reader.onload=function(){
-
-let div =
-document.createElement("div")
-
-div.className="item"
-
-div.innerHTML=`
-
-<p>Người đăng:
-${currentUser}</p>
-
-<img src="${reader.result}">
-
-<h3>${name}</h3>
-
-<p>${desc}</p>
-
-<button onclick="deleteItem(this)">
-Xóa
-</button>
-
-`
-
-document.getElementById("items")
-.appendChild(div)
-
-}
-
-reader.readAsDataURL(image)
-
-}
-
-function deleteItem(btn){
-
-btn.parentElement.remove()
-
-}
 ```
+
