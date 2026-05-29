@@ -6,9 +6,20 @@
 <title>Chợ đồ cũ</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
+</div>
 <body>
+<div id="login-box">
+    <h2>Đăng nhập</h2>
 
+    <input type="text" id="username" placeholder="Tên đăng nhập">
+    <input type="password" id="password" placeholder="Mật khẩu">
+
+    <button onclick="dangNhap()">Đăng nhập</button>
+
+    <p id="error"></p>
+</div>
+
+<div id="web-content" style="display:none;">
 <h1>Chợ đồ cũ</h1>
 
 <!-- Thanh tài khoản góc phải -->
@@ -75,15 +86,3 @@
 </html>
 
 <script src="script.js"></script>
-<div id="login-box">
-    <h2>Đăng nhập</h2>
-
-    <input type="text" id="username" placeholder="Tên đăng nhập">
-    <input type="password" id="password" placeholder="Mật khẩu">
-
-    <button onclick="dangNhap()">Đăng nhập</button>
-
-    <p id="error"></p>
-</div>
-
-<div id="web-content" style="display:none;">
